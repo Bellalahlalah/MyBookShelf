@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>บันทึกหนังสือที่อ่าน</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f4f6;
+      color: #111827;
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #1d4ed8;
+    }
+
+    input, button {
+      margin: 5px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+
+    button {
+      background-color: #3b82f6;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+    }
+
+    #book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    }
+
+    .book img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    }
+
+    .book {
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    }
+    
+
+    img {
+      max-width: 100px;
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>บันทึกหนังสือที่อ่าน</h1>
+
+  <h3>เพิ่มหนังสือใหม่</h3>
+  <input type="text" id="title" placeholder="ชื่อหนังสือ">
+  <input type="text" id="author" placeholder="ผู้แต่ง">
+  <select id="status">
+    <option value="กำลังอ่าน">กำลังอ่าน</option>
+    <option value="อ่านจบแล้ว">อ่านจบแล้ว</option>
+    <option value="อยากอ่าน">อยากอ่าน</option>
+  </select>
+  <input type="file" id="image" accept="image/*">
+  <button onclick="addBook()">เพิ่ม</button>
+
+  <h3>รายการหนังสือ</h3>
+  <div id="book-list" class="grid"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
