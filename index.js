@@ -6,12 +6,13 @@ const cors = require('cors');
 const fs = require('fs');
 const DB_book = require('./DB_book');// เชื่อมต่อ MongoDB Atlas
 
-
 const app = express();
 const PORT = 3000;
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+
+app.use(express.static('public')); // ให้ express ใช้ไฟล์ static ในโฟลเดอร์ public
 
 // Route เริ่มต้น
 app.get('/', (req, res) => {

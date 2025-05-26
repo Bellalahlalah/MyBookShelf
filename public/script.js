@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/books';
+const API_URL = '/api/books'; // URL ของ API ที่ใช้ดึงข้อมูลหนังสือ
 
 async function loadBooks() {
   const res = await fetch(API_URL);
